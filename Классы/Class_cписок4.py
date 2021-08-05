@@ -1,3 +1,4 @@
+# Только добавление задачи
 class Todo:
     def __init__(self):
         self.list = []
