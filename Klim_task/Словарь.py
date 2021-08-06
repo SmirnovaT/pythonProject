@@ -18,8 +18,13 @@ def add_shopping_list(**kwargs):
 
 
 def remove_shopping_list(**kwargs):
-    delete_input = input("Какой продукт удалить? ").lower()
-    delete_todo = shopping_list.pop(delete_input)
+    while True:
+        try:
+            delete_input = input("Какой продукт удалить? ").lower()
+            delete_todo = shopping_list.pop(delete_input)
+            break
+        except KeyError:
+            print("Этого продукта в списке нет")
     print(shopping_list)
 
 
