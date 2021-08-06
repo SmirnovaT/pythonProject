@@ -21,7 +21,7 @@ while True:
     if user == "показать":
         print("Список: ", obj.dis())
     elif user == "добавить":
-        task = input("Добавьте задачу в список: ")
+        task = input("Добавьте задачу в список: ").lower()
 
         while True:
             try:
@@ -33,9 +33,13 @@ while True:
         print("Список: ", obj.dis())
 
     elif user == "удалить":
-        delete = input("Какую задачу удалить? ").lower()
-        obj.remove(delete)
-        print("Список: ", obj.dis())
+        while True:
+            try:
+                delete = input("Какую задачу удалить? ").lower()
+                obj.remove(delete)
+            except KeyError:
+                print("Данной задачи в списке нет")
+            print("Список: ", obj.dis())
     elif user == "стоп":
         break
     else:
